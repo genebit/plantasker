@@ -1,9 +1,10 @@
-import { initializeFirebase } from "./utils/utils"
+import { initializeFirebase } from "@utils/utils"
+import TodoPage from "@pages/todo"
 
 initializeFirebase()
 
 const App = () => {
-  return <></>
+  return <TodoPage />
 }
 
 export default App
