@@ -53,7 +53,7 @@ const FormCreateTask: React.FC<Props> = ({ updateTasks }) => {
           value={formData.taskDescription}
           onChange={handleChange}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Create</Button>
       </form>
     </>
   )

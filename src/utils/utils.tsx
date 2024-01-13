@@ -6,5 +6,5 @@ export const initializeFirebase = () => {
   // Initialize Firebase
   initializeApp(firebaseConfig)
   const app = initializeApp(firebaseConfig)
-  const analytics = getAnalytics(app)
+  getAnalytics(app)
 }
