@@ -4,7 +4,7 @@ import { tree20 } from "@assets/tree/growth"
 import { Checkbox } from "@components/ui"
 import FormCreateTask from "@/pages/todo/features/create/FormCreateTask"
 import { getTasksFromLocalStorage } from "@pages/todo/utils"
-import HomeLayout from "@/layouts/Home"
+import HomeLayout from "@/layouts/HomeLayout"
 
 const TodoPage = () => {
   const [tasks, setTasks] = useState<Task[]>([])
