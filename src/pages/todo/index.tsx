@@ -1,51 +1,42 @@
 import { useEffect, useState } from "react"
 
-import { tree20 } from "@assets/tree/growth"
-import { Checkbox } from "@components/ui"
-import FormCreateTask from "@/pages/todo/features/create/FormCreateTask"
 import { getTasksFromLocalStorage } from "@pages/todo/utils"
-import HomeLayout from "@/layouts/HomeLayout"
+import HomeLayout from "@layouts/HomeLayout"
+import TaskContext from "@pages/todo/contexts/TaskContext"
+import { TasksList, TasksListFinished } from "@pages/todo/components"
+import Task from "@pages/todo/types/interfaces/task"
+import { CreateTask, Tree } from "@pages/todo/features"
 
 const TodoPage = () => {
   const [tasks, setTasks] = useState<Task[]>([])
+  const finishedTasks = tasks.filter((task) => task.done)
 
   useEffect(() => {
-    const tasksFromLocalStorage = getTasksFromLocalStorage()
+    const tasksFromLocalStorage: Task[] = getTasksFromLocalStorage()
     setTasks(tasksFromLocalStorage)
   }, [])
-
-  const handleUpdateTasks = (updatedTasks: Task[]) => setTasks(updatedTasks)
 
   return (
     <>
       <HomeLayout>
-        <img src={tree20} alt="Tree" className="mx-auto w-max" />
-        <div className="flex flex-col justify-center gap-5 mx-auto w-max">
-          <FormCreateTask updateTasks={handleUpdateTasks} />
-          {/* Tasks */}
-          <div className="flex flex-col gap-3">
-            <label className="opacity-75 w-max">Tasks</label>
-            {tasks.map((task) => {
-              return (
-                <div key={task.id} className="flex items-center space-x-2">
-                  <Checkbox id={`task-${task.id}`} />
-                  <label
-                    htmlFor={`task-${task.id}`}
-                    className={`text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 ${
-                      task.done ? "line-through" : ""
-                    }`}
-                  >
-                    {task.description}
-                  </label>
+        <div className="container">
+          <TaskContext.Provider value={{ tasks, setTasks }}>
+            <Tree />
+            <div className="flex flex-col justify-center gap-5 mx-auto w-max">
+              <CreateTask />
+              <div className="flex flex-col">
+                <label className="text-sm opacity-75 w-max">Tasks</label>
+                <TasksList />
+              </div>
+              <div className="flex flex-col">
+                <div className="flex justify-between">
+                  <label className="text-sm opacity-75 w-max">Finished Tasks</label>
+                  <label className="text-sm opacity-75 w-max">{finishedTasks.length} Done</label>
                 </div>
-              )
-            })}
-          </div>
-          {/* Finished Tasks */}
-          <div className="flex justify-between">
-            <label className="opacity-75 w-max">Finished Tasks</label>
-            <label className="opacity-75 w-max">0 Done</label>
-          </div>
+                <TasksListFinished />
+              </div>
+            </div>
+          </TaskContext.Provider>
         </div>
       </HomeLayout>
     </>
