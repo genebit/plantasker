@@ -5,6 +5,7 @@ import { Button } from "@components/ui"
 import { getTasksFromLocalStorage } from "@pages/todo/utils"
 import TaskContext from "@pages/todo/contexts/TaskContext"
 import { trashSFX } from "@constants/constants"
+import playAudio from "@/pages/todo/utils/playAudio"
 
 interface Props {
   id: number
@@ -24,9 +25,7 @@ const DeleteTask: React.FC<Props> = ({ id }) => {
     // 3. update the state with the new tasks
     context?.setTasks(newTasks)
 
-    // play an audio
-    const audio = new Audio(trashSFX)
-    audio.play()
+    playAudio(trashSFX)
   }
 
   return (

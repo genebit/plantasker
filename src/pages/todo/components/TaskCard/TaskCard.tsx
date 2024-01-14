@@ -8,7 +8,8 @@ import { Edit2, X } from "lucide-react"
 import { getTasksFromLocalStorage } from "@pages/todo/utils"
 import TaskContext from "@pages/todo/contexts/TaskContext"
 import Task from "@pages/todo/types/interfaces/task"
-import { clickSFX } from "@constants/constants"
+import { clickSFX, trashSFX } from "@constants/constants"
+import playAudio from "@/pages/todo/utils/playAudio"
 
 interface Props {
   task: Task
@@ -50,6 +51,8 @@ const TaskCard: React.FC<Props> = ({ task }) => {
         action: { label: "Close", onClick: () => null },
       })
 
+      playAudio(trashSFX)
+
       // clear the form
       setTaskDescription("")
 
@@ -79,9 +82,7 @@ const TaskCard: React.FC<Props> = ({ task }) => {
     // 4. update the state with the new tasks
     tasksContext?.setTasks(newTasks)
 
-    // play an audio
-    const audio = new Audio(clickSFX)
-    audio.play()
+    playAudio(clickSFX)
   }
 
   return (

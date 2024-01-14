@@ -4,7 +4,8 @@ import { Button, Input } from "@components/ui"
 import { getTasksFromLocalStorage, setUid } from "@pages/todo/utils"
 import { toast } from "sonner"
 import TaskContext from "@pages/todo/contexts/TaskContext"
-import { clickSFX } from "@constants/constants"
+import { clickSFX, trashSFX } from "@constants/constants"
+import playAudio from "@/pages/todo/utils/playAudio"
 
 const CreateTask: React.FC = () => {
   const context = useContext(TaskContext)
@@ -23,6 +24,8 @@ const CreateTask: React.FC = () => {
         dismissible: true,
         action: { label: "Close", onClick: () => null },
       })
+
+      playAudio(trashSFX)
 
       // clear the form
       setTaskDescription("")
@@ -51,9 +54,7 @@ const CreateTask: React.FC = () => {
     // 5. clear the form
     setTaskDescription("")
 
-    // play an audio
-    const audio = new Audio(clickSFX)
-    audio.play()
+    playAudio(clickSFX)
   }
 
   return (
