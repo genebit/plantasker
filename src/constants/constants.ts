@@ -1,3 +1,6 @@
+export const clickSFX = "/audio/check-sfx.mp3"
+export const trashSFX = "/audio/trash-sfx.mp3"
+
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 export const firebaseConfig = {
   apiKey: "AIzaSyC4Jko8KkTDFZCkV0wHt2PfInHFM9gOw_s",

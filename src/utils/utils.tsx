@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app"
 import { getAnalytics } from "firebase/analytics"
-import { firebaseConfig } from "@config/config"
+import { firebaseConfig } from "@constants/constants"
 
 export const initializeFirebase = () => {
   // Initialize Firebase
