@@ -1,4 +1,4 @@
-![Alt text](/public/assets/logo-full.png "logo")
+![Alt text](/public/favicon/apple-icon-72x72.png "logo")
 
 ## **Planttasker: Growing Trees with Tasks**
 
