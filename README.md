@@ -1,8 +1,12 @@
-![Alt text](/public/favicon/apple-icon-72x72.png "logo")
+<div align="center">
 
-## **Planttasker: Growing Trees with Tasks**
+![Planttasker Logo](/public/favicon/apple-icon-72x72.png "Logo")
 
-[Report a Bug](https://github.com/genebit/plantasker/issues)
+## Plantasker: Growing Trees with Tasks
+
+[View Live Demo](https://planttasker.web.app) • [Report a Bug](https://github.com/genebit/plantasker/issues)
+
+</div>
 
 <details>
 <summary><b>Table of Contents</b></summary>
