@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react"
+import { Eye, EyeOff } from "lucide-react"
 
 import logo from "@assets/brands/64x64.png"
-import { getTasksFromLocalStorage } from "@pages/todo/utils"
-import HomeLayout from "@layouts/HomeLayout"
-import TaskContext from "@pages/todo/contexts/TaskContext"
-import { TasksList, TasksListFinished } from "@pages/todo/components"
-import Task from "@pages/todo/types/interfaces/task"
-import { CreateTask, Tree } from "@pages/todo/features"
-import { Eye, EyeOff } from "lucide-react"
 import { Button } from "@components/ui"
+import HomeLayout from "@layouts/HomeLayout"
+import { TasksList, TasksListFinished } from "@pages/todo/components"
+import { getTasksFromLocalStorage } from "@pages/todo/utils"
+import Task from "@pages/todo/types/interfaces/task"
+import TaskContext from "@pages/todo/contexts/TaskContext"
+import ClearTasks from "@pages/todo/features/ClearTasks/ClearTasks"
+import { CreateTask, Tree } from "@pages/todo/features"
 
 const TodoPage = () => {
   const [tasks, setTasks] = useState<Task[]>([])
@@ -72,6 +73,7 @@ const TodoPage = () => {
                 </div>
                 <TasksListFinished />
               </div>
+              <ClearTasks />
             </div>
           </TaskContext.Provider>
         </div>
