@@ -9,6 +9,7 @@ import { CreateTask, Tree } from "@pages/todo/features"
 
 const TodoPage = () => {
   const [tasks, setTasks] = useState<Task[]>([])
+  const unFinishedTasks = tasks.filter((task) => !task.done)
   const finishedTasks = tasks.filter((task) => task.done)
 
   useEffect(() => {
@@ -25,7 +26,10 @@ const TodoPage = () => {
             <div className="flex flex-col justify-center gap-5 mx-auto w-max">
               <CreateTask />
               <div className="flex flex-col">
-                <label className="text-sm opacity-75 w-max">Tasks</label>
+                <div className="flex justify-between">
+                  <label className="text-sm opacity-75 w-max">Tasks</label>
+                  <label className="text-sm opacity-75 w-max">{unFinishedTasks.length} Remaining Task(s)</label>
+                </div>
                 <TasksList />
               </div>
               <div className="flex flex-col">
