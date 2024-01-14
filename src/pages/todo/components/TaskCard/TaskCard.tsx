@@ -8,6 +8,7 @@ import { Edit2, X } from "lucide-react"
 import { getTasksFromLocalStorage } from "@pages/todo/utils"
 import TaskContext from "@pages/todo/contexts/TaskContext"
 import Task from "@pages/todo/types/interfaces/task"
+import { clickSFX } from "@constants/constants"
 
 interface Props {
   task: Task
@@ -77,6 +78,10 @@ const TaskCard: React.FC<Props> = ({ task }) => {
 
     // 4. update the state with the new tasks
     tasksContext?.setTasks(newTasks)
+
+    // play an audio
+    const audio = new Audio(clickSFX)
+    audio.play()
   }
 
   return (
