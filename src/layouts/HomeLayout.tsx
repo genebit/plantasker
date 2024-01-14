@@ -10,7 +10,7 @@ const HomeLayout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <div className="relative min-h-screen duration-500 animate-fade-in">
-        <main className="container flex flex-col justify-center gap-5">{children}</main>
+        <main className="container flex flex-col min-h-screen items-center justify-center gap-5">{children}</main>
         <Footer />
       </div>
       <Toaster position="top-center" />
