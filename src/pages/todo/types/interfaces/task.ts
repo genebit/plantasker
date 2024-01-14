@@ -3,3 +3,5 @@ interface Task {
   description: string
   done: boolean
 }
+
+export default Task
