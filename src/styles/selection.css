@@ -1,0 +1,5 @@
+@layer base {
+  ::selection {
+    @apply bg-opacity-50 bg-slate-950;
+  }
+}

@@ -1,12 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-  ],
+  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
     container: {
@@ -15,6 +10,28 @@ module.exports = {
       screens: {
         "2xl": "1400px",
       },
+    },
+    fontFamily: {
+      inter: ["Inter-Regular, sans-serif"],
+      "inter-100": ["Inter-Thin", "sans-serif"],
+      "inter-200": ["Inter-ExtraLight", "sans-serif"],
+      "inter-300": ["Inter-Light", "sans-serif"],
+      "inter-400": ["Inter-Regular", "sans-serif"],
+      "inter-500": ["Inter-Medium", "sans-serif"],
+      "inter-600": ["Inter-SemiBold", "sans-serif"],
+      "inter-700": ["Inter-Bold", "sans-serif"],
+      "inter-800": ["Inter-ExtraBold", "sans-serif"],
+      "inter-900": ["Inter-Black", "sans-serif"],
+    },
+    fontSize: {
+      xs: ["12px", { lineHeight: "22px", letterSpacing: "-0.02rem" }],
+      sm: ["14px", { lineHeight: "26px", letterSpacing: "-0.02rem" }],
+      lg: ["16px", { lineHeight: "26px", letterSpacing: "-0.02rem" }],
+      xl: ["22px", { lineHeight: "34px", letterSpacing: "-0.02rem" }],
+      "2xl": ["34px", { lineHeight: "46px", letterSpacing: "-0.022rem" }],
+      "3xl": ["46px", { lineHeight: "54px", letterSpacing: "-0.022rem" }],
+      "4xl": ["54px", { lineHeight: "62px", letterSpacing: "-0.022rem" }],
+      "5xl": ["78px", { lineHeight: "78px", letterSpacing: "-0.022rem" }],
     },
     extend: {
       colors: {
