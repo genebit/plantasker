@@ -29,3 +29,5 @@ firestore.indexes.json
 firestore.rules
 .firebaserc
 .firebase/
+
+.env
