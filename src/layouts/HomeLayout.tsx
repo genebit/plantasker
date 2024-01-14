@@ -1,3 +1,4 @@
+import { Toaster } from "@components/ui/sonner"
 import Footer from "@pages/todo/components/Footer"
 import { ReactNode } from "react"
 
@@ -12,6 +13,7 @@ const HomeLayout: React.FC<Props> = ({ children }) => {
         <main className="container flex flex-col justify-center gap-5">{children}</main>
         <Footer />
       </div>
+      <Toaster position="top-center" />
     </>
   )
 }
