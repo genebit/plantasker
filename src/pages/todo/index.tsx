@@ -39,7 +39,7 @@ const TodoPage = () => {
             </div>
             <div className="flex items-center gap-1 mx-auto w-max">
               <div className="flex gap-3">
-                <span className="text-slate-500">{completionPercentage}%</span>
+                <span className="text-slate-500">{Number.isNaN(completionPercentage) ? 0 : completionPercentage}%</span>
                 <span className="text-slate-500">•</span>
               </div>
               <Button onClick={toggleTree} size={"sm"} variant={"ghost"} className="gap-2 px-2 text-slate-500">
