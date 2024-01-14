@@ -31,6 +31,20 @@ const TaskCard: React.FC<Props> = ({ task }) => {
     if (editing && inputRef.current) {
       inputRef.current.focus()
     }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (editing && e.key === "Escape") {
+        setEditing(false)
+      }
+    }
+
+    // Add event listener when component mounts
+    document.addEventListener("keydown", handleKeyDown)
+
+    // Remove event listener when component unmounts
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown)
+    }
   }, [editing])
 
   // form inputfield for editing onchange event
@@ -102,12 +116,12 @@ const TaskCard: React.FC<Props> = ({ task }) => {
                 defaultValue={task.description}
                 ref={inputRef}
                 onChange={handleChange}
-                className="text-sm border-b-[1px] outline-none border-b-slate-950 active:border-none focus:outline-none"
+                className="text-sm border-b-[1px] w-[18rem] outline-none border-b-slate-950 active:border-none focus:outline-none"
               />
             </form>
           ) : (
             <label
-              className={`text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 ${
+              className={`text-sm py-1 font-medium w-[18rem] whitespace-nowrap overflow-x-hidden overflow-ellipsis leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 ${
                 task.done ? "line-through" : ""
               }`}
               onDoubleClick={() => setEditing(true)}
