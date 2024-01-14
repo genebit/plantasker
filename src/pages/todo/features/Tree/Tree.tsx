@@ -23,7 +23,7 @@ function Tree() {
 
   return (
     <>
-      <img src={treeGrowth} alt="Tree" className="mx-auto mb-5 w-[25%]" />
+      <img src={treeGrowth} alt="Tree" className="mx-auto mb-5 w-[25%] animate-fade-in" />
     </>
   )
 }

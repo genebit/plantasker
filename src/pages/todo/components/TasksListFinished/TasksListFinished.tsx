@@ -8,7 +8,7 @@ function TasksListFinished() {
 
   return (
     <>
-      <div className="max-h-[8rem] overflow-y-scroll scroll-shadows">
+      <div className="max-h-[7rem] min-h-[7rem] overflow-y-scroll scroll-shadows">
         {finishedTasks?.map((task) => {
           return <TaskCard key={task.id} task={task} />
         })}
