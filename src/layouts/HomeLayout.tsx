@@ -1,5 +1,5 @@
 import { Toaster } from "@components/ui/sonner"
-import Footer from "@pages/todo/components/Footer"
+import Footer from "@/pages/todo/components/Footer/Footer"
 import { ReactNode } from "react"
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 const HomeLayout: React.FC<Props> = ({ children }) => {
   return (
     <>
-      <div className="relative min-h-screen">
+      <div className="relative min-h-screen duration-500 animate-fade-in">
         <main className="container flex flex-col justify-center gap-5">{children}</main>
         <Footer />
       </div>
