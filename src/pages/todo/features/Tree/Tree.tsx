@@ -2,9 +2,11 @@ import { useContext, useEffect, useState } from "react"
 
 import { tree20, tree40, tree60, tree80, tree100 } from "@assets/tree/growth"
 import TaskContext from "@pages/todo/contexts/TaskContext"
+import TreeContext from "@pages/todo/contexts/TreeContext"
 
 function Tree() {
   const context = useContext(TaskContext)
+  const treeContext = useContext(TreeContext)
   const finishedTasks = context?.tasks.filter((task) => task.done)
   const points = Math.round(((finishedTasks?.length ?? 0) / (context?.tasks.length ?? 0)) * 100)
 
@@ -23,7 +25,9 @@ function Tree() {
 
   return (
     <>
-      <img src={treeGrowth} alt="Tree" className="mx-auto mb-5 w-[25%] animate-fade-in" />
+      {!treeContext?.hideTree ? (
+        <img src={treeGrowth} alt="Tree" className="mx-auto mb-5 w-[25%] animate-fade-in" />
+      ) : null}
     </>
   )
 }
