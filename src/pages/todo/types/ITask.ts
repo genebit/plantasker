@@ -1,7 +1,5 @@
-interface Task {
+interface ITask {
   id: number
   description: string
   done: boolean
 }
-
-export default Task

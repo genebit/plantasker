@@ -7,12 +7,11 @@ import { toast } from "sonner"
 import { Edit2, X } from "lucide-react"
 import { getTasksFromLocalStorage } from "@pages/todo/utils"
 import TaskContext from "@pages/todo/contexts/TaskContext"
-import Task from "@pages/todo/types/interfaces/task"
 import { clickSFX, trashSFX } from "@lib/constants"
 import playAudio from "@pages/todo/utils/playAudio"
 
 interface Props {
-  task: Task
+  task: ITask
 }
 
 const TaskCard: React.FC<Props> = ({ task }) => {

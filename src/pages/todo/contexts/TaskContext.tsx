@@ -1,10 +1,8 @@
 import { Dispatch, SetStateAction, createContext } from "react"
 
-import Task from "@pages/todo/types/interfaces/task"
-
 interface TasksState {
-  tasks: Task[]
-  setTasks: Dispatch<SetStateAction<Task[]>>
+  tasks: ITask[]
+  setTasks: Dispatch<SetStateAction<ITask[]>>
 }
 
 const TaskContext = createContext<TasksState | undefined>(undefined)

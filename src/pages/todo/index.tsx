@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import logo from "@assets/brands/64x64.png"
 import { TasksList, TasksListFinished } from "@pages/todo/components"
 import { getTasksFromLocalStorage } from "@pages/todo/utils"
-import Task from "@pages/todo/types/interfaces/task"
 import TaskContext from "@pages/todo/contexts/TaskContext"
 import ClearTasks from "@pages/todo/features/ClearTasks/ClearTasks"
 import { CreateTask, Tree } from "@pages/todo/features"
@@ -11,7 +10,7 @@ import TreeContext from "@pages/todo/contexts/TreeContext"
 import HideTree from "@pages/todo/features/HideTree/HideTree"
 
 const TodoPage = () => {
-  const [tasks, setTasks] = useState<Task[]>([])
+  const [tasks, setTasks] = useState<ITask[]>([])
   const [hideTree, setHideTree] = useState(false)
 
   const unFinishedTasks = tasks.filter((task) => !task.done)
@@ -21,7 +20,7 @@ const TodoPage = () => {
   const completionPercentage = Math.round((finishedTasks.length / tasks.length) * 100)
 
   useEffect(() => {
-    const tasksFromLocalStorage: Task[] = getTasksFromLocalStorage()
+    const tasksFromLocalStorage: ITask[] = getTasksFromLocalStorage()
     setTasks(tasksFromLocalStorage)
   }, [])
 

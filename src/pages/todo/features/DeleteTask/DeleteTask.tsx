@@ -13,6 +13,7 @@ interface Props {
 
 const DeleteTask: React.FC<Props> = ({ id }) => {
   const context = useContext(TaskContext)
+  const btnClassName = "p-3 active:scale-90 opacity-50 hover:opacity-100 hover:text-red-500 transition-opacity"
 
   function deleteTask() {
     // 1. remove the task from localstorage
@@ -30,11 +31,7 @@ const DeleteTask: React.FC<Props> = ({ id }) => {
 
   return (
     <>
-      <Button
-        className="p-3 active:scale-90 opacity-50 hover:opacity-100 hover:text-red-500 transition-opacity"
-        variant={"ghost"}
-        onClick={deleteTask}
-      >
+      <Button className={btnClassName} variant={"ghost"} onClick={deleteTask}>
         <Trash size={16} />
       </Button>
     </>
