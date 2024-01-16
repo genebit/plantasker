@@ -5,7 +5,7 @@ import { Button } from "@components/ui"
 import { getTasksFromLocalStorage } from "@pages/todo/utils"
 import TaskContext from "@pages/todo/contexts/TaskContext"
 import { trashSFX } from "@constants/constants"
-import playAudio from "@/pages/todo/utils/playAudio"
+import playAudio from "@pages/todo/utils/playAudio"
 
 interface Props {
   id: number

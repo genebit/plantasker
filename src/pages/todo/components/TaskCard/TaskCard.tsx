@@ -9,7 +9,7 @@ import { getTasksFromLocalStorage } from "@pages/todo/utils"
 import TaskContext from "@pages/todo/contexts/TaskContext"
 import Task from "@pages/todo/types/interfaces/task"
 import { clickSFX, trashSFX } from "@constants/constants"
-import playAudio from "@/pages/todo/utils/playAudio"
+import playAudio from "@pages/todo/utils/playAudio"
 
 interface Props {
   task: Task

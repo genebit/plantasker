@@ -1,6 +1,6 @@
 import { initializeFirebase, setTabTag } from "@lib/utils"
 import { Toaster } from "@components/ui/sonner"
-import Footer from "@/pages/todo/components/Footer/Footer"
+import Footer from "@pages/todo/components/Footer/Footer"
 import TodoPage from "@pages/todo"
 
 // set config

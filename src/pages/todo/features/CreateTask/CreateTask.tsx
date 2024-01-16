@@ -5,7 +5,7 @@ import { getTasksFromLocalStorage, setUid } from "@pages/todo/utils"
 import { toast } from "sonner"
 import TaskContext from "@pages/todo/contexts/TaskContext"
 import { clickSFX, trashSFX } from "@constants/constants"
-import playAudio from "@/pages/todo/utils/playAudio"
+import playAudio from "@pages/todo/utils/playAudio"
 
 const CreateTask: React.FC = () => {
   const context = useContext(TaskContext)
