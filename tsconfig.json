@@ -24,11 +24,11 @@
     "paths": {
       "@/*": ["./src/*"],
       "@assets/*": ["./src/assets/*"],
+      "@lib/*": ["./src/lib/*"],
       "@components/*": ["./src/components/*"],
       "@constants/*": ["src/constants/*"],
       "@styles/*": ["./src/styles/*"],
-      "@pages/*": ["./src/pages/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@pages/*": ["./src/pages/*"]
     }
   },
   "include": ["src"],
