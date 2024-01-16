@@ -11,3 +11,4 @@ export {
   DialogTrigger,
   DialogClose,
 } from "@components/ui/dialog"
+export { Badge } from "@components/ui/badge"
