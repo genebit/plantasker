@@ -2,7 +2,7 @@ import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 import { initializeApp } from "firebase/app"
 import { getAnalytics } from "firebase/analytics"
-import { firebaseConfig } from "@constants/constants"
+import { firebaseConfig } from "@lib/constants"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))

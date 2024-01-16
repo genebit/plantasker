@@ -4,7 +4,7 @@ import { Button, Input } from "@components/ui"
 import { getTasksFromLocalStorage, setUid } from "@pages/todo/utils"
 import { toast } from "sonner"
 import TaskContext from "@pages/todo/contexts/TaskContext"
-import { clickSFX, trashSFX } from "@constants/constants"
+import { clickSFX, trashSFX } from "@lib/constants"
 import playAudio from "@pages/todo/utils/playAudio"
 
 const CreateTask: React.FC = () => {
