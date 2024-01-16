@@ -30,7 +30,11 @@ const DeleteTask: React.FC<Props> = ({ id }) => {
 
   return (
     <>
-      <Button className="p-3 active:scale-90" variant={"ghost"} onClick={deleteTask}>
+      <Button
+        className="p-3 active:scale-90 opacity-50 hover:opacity-100 transition-opacity"
+        variant={"ghost"}
+        onClick={deleteTask}
+      >
         <Trash size={16} />
       </Button>
     </>

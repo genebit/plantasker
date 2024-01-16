@@ -131,7 +131,11 @@ const TaskCard: React.FC<Props> = ({ task }) => {
           )}
         </div>
         <div className="flex gap-1">
-          <Button className="p-3 active:scale-90" variant={"ghost"} onClick={toggleButton}>
+          <Button
+            className="p-3 active:scale-90 opacity-50 hover:opacity-100 transition-opacity"
+            variant={"ghost"}
+            onClick={toggleButton}
+          >
             {editing ? <X size={16} /> : <Edit2 size={16} />}
           </Button>
           <DeleteTask id={task.id} />
