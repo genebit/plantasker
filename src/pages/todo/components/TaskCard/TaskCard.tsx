@@ -1,14 +1,14 @@
 import { ChangeEvent, FormEvent, useContext, useEffect, useRef, useState } from "react"
 
-import { Button, Checkbox } from "@components/ui"
-import { DeleteTask } from "@pages/todo/features"
-import EditTaskContext from "@pages/todo/contexts/EditTaskContext"
+import { Button, Checkbox } from "@/components/ui"
+import { DeleteTask } from "@/pages/todo/features"
+import EditTaskContext from "@/pages/todo/contexts/EditTaskContext"
 import { toast } from "sonner"
 import { Edit2, X } from "lucide-react"
-import { getTasksFromLocalStorage } from "@pages/todo/utils"
-import TaskContext from "@pages/todo/contexts/TaskContext"
-import { clickSFX, trashSFX } from "@lib/constants"
-import playAudio from "@pages/todo/utils/playAudio"
+import { getTasksFromLocalStorage } from "@/pages/todo/utils"
+import TaskContext from "@/pages/todo/contexts/TaskContext"
+import { clickSFX, trashSFX } from "@/lib/constants"
+import playAudio from "@/pages/todo/utils/playAudio"
 
 interface Props {
   task: ITask
@@ -131,7 +131,7 @@ const TaskCard: React.FC<Props> = ({ task }) => {
         </div>
         <div className="flex gap-1">
           <Button
-            className="p-3 active:scale-90 opacity-50 hover:opacity-100 transition-opacity"
+            className="p-3 transition-opacity opacity-50 active:scale-90 hover:opacity-100"
             variant={"ghost"}
             onClick={toggleButton}
           >

@@ -1,7 +1,7 @@
-import { Button } from "@components/ui"
+import { Button } from "@/components/ui"
 import { Eye, EyeOff } from "lucide-react"
 import { useContext } from "react"
-import TreeContext from "@pages/todo/contexts/TreeContext"
+import TreeContext from "@/pages/todo/contexts/TreeContext"
 
 const HideTree = () => {
   const treeContext = useContext(TreeContext)

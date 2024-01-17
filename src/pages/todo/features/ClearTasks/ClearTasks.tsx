@@ -10,8 +10,8 @@ import {
   DialogTitle,
   DialogDescription,
   DialogClose,
-} from "@components/ui"
-import TaskContext from "@pages/todo/contexts/TaskContext"
+} from "@/components/ui"
+import TaskContext from "@/pages/todo/contexts/TaskContext"
 
 const ClearTasks = () => {
   const context = useContext(TaskContext)

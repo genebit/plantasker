@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react"
 
-import { tree20, tree40, tree60, tree80, tree100 } from "@assets/tree/growth"
-import TaskContext from "@pages/todo/contexts/TaskContext"
-import TreeContext from "@pages/todo/contexts/TreeContext"
+import { tree20, tree40, tree60, tree80, tree100 } from "@/assets/tree/growth"
+import TaskContext from "@/pages/todo/contexts/TaskContext"
+import TreeContext from "@/pages/todo/contexts/TreeContext"
 
 function Tree() {
   const context = useContext(TaskContext)

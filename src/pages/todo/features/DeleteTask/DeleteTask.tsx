@@ -1,11 +1,11 @@
 import { useContext } from "react"
 import { Trash } from "lucide-react"
 
-import { Button } from "@components/ui"
-import { getTasksFromLocalStorage } from "@pages/todo/utils"
-import TaskContext from "@pages/todo/contexts/TaskContext"
-import { trashSFX } from "@lib/constants"
-import playAudio from "@pages/todo/utils/playAudio"
+import { Button } from "@/components/ui"
+import { getTasksFromLocalStorage } from "@/pages/todo/utils"
+import TaskContext from "@/pages/todo/contexts/TaskContext"
+import { trashSFX } from "@/lib/constants"
+import playAudio from "@/pages/todo/utils/playAudio"
 
 interface Props {
   id: number
