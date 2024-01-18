@@ -12,3 +12,4 @@ export {
   DialogClose,
 } from "@/components/ui/dialog"
 export { Badge } from "@/components/ui/badge"
+export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"

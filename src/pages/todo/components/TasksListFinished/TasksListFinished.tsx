@@ -7,13 +7,11 @@ function TasksListFinished() {
   const finishedTasks = context?.tasks.filter((task) => task.done)
 
   return (
-    <>
-      <div className="max-h-[7rem] min-h-[7rem] overflow-y-scroll scroll-shadows">
-        {finishedTasks?.map((task) => {
-          return <TaskCard key={task.id} task={task} />
-        })}
-      </div>
-    </>
+    <div className="max-h-[12rem] min-h-[12rem] overflow-y-scroll scroll-shadows">
+      {finishedTasks?.map((task) => {
+        return <TaskCard key={task.id} task={task} />
+      })}
+    </div>
   )
 }
 

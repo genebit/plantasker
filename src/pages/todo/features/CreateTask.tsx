@@ -1,13 +1,12 @@
 import { ChangeEvent, FormEvent, useContext, useState } from "react"
 
 import { Button, Input } from "@/components/ui"
-import { getTasksFromLocalStorage, setUid } from "@/pages/todo/utils"
 import { toast } from "sonner"
 import TaskContext from "@/pages/todo/contexts/TaskContext"
 import { clickSFX, trashSFX } from "@/lib/constants"
 import playAudio from "@/pages/todo/utils/playAudio"
 
-const CreateTask: React.FC = () => {
+const CreateTask = () => {
   const context = useContext(TaskContext)
 
   const [taskDescription, setTaskDescription] = useState("")
@@ -33,23 +32,7 @@ const CreateTask: React.FC = () => {
       return
     }
 
-    // if it's validated, then create the task
-    // 1. define the object for the task
-    const task = {
-      id: setUid(),
-      description: taskDescription,
-      done: false,
-    }
-
-    // 2. store task to storage as a json string
-    localStorage.setItem(task.id.toString(), JSON.stringify(task))
-
-    // 3. refresh the fetching tasks
-    // fetch the updated tasks from localStorage
-    const newTasks = getTasksFromLocalStorage()
-
-    // 4. update the state with the new tasks
-    context?.setTasks(newTasks)
+    context?.addTask!(taskDescription)
 
     // 5. clear the form
     setTaskDescription("")
@@ -58,19 +41,17 @@ const CreateTask: React.FC = () => {
   }
 
   return (
-    <>
-      <form className="flex gap-3" onSubmit={createTask}>
-        <Input
-          placeholder="Write some tasks"
-          className="w-[20rem] transition-all duration-75"
-          value={taskDescription}
-          onChange={handleChange}
-        />
-        <Button className="active:scale-90" type="submit">
-          Create
-        </Button>
-      </form>
-    </>
+    <form className="flex gap-3" onSubmit={createTask}>
+      <Input
+        placeholder="Write some tasks"
+        className="w-[23rem] transition-all duration-75"
+        value={taskDescription}
+        onChange={handleChange}
+      />
+      <Button className="active:scale-90" type="submit">
+        Create
+      </Button>
+    </form>
   )
 }
 

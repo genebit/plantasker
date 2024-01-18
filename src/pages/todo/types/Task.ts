@@ -1,4 +1,4 @@
-interface ITask {
+interface Task {
   id: number
   description: string
   done: boolean
