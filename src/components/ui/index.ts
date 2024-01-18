@@ -13,3 +13,4 @@ export {
 } from "@/components/ui/dialog"
 export { Badge } from "@/components/ui/badge"
 export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+export { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } from "@/components/ui/context-menu"
