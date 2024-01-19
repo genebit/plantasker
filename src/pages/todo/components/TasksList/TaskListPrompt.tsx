@@ -13,7 +13,7 @@ export const TaskListPrompt = () => {
   if (context?.tasks.length === 0) {
     // this user has no tasks yet.
     return (
-      <p className="absolute text-sm left-[2rem] top-[4rem] text-center animate-fade-in">
+      <p className="absolute text-sm left-[4rem] top-[4rem] text-center animate-fade-in">
         Start writing tasks and marvel at your beautiful tree! 🌱
       </p>
     )
@@ -22,7 +22,7 @@ export const TaskListPrompt = () => {
     // this user has finished all tasks and all are placed
     // on the finished tasks list.
     return (
-      <p className="absolute text-sm left-[2rem] top-[4rem] text-center animate-fade-in">
+      <p className="absolute text-sm left-[4rem] top-[4rem] text-center animate-fade-in">
         Good job! you've completed all your tasks for today 💪 <br />
         Now marvel at your beautiful tree!
       </p>

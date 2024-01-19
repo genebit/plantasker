@@ -15,6 +15,10 @@ export const useTodo = () => {
     setTasks(sortedTasks)
   }
 
+  const getFinishedTasks = () => {
+    return tasks.filter((task) => task.done)
+  }
+
   const getTasks = () => {
     useEffect(() => {
       refreshTasks()
@@ -38,6 +42,7 @@ export const useTodo = () => {
     const newTask: Task = {
       id: setUid(),
       description: text,
+      priority: undefined,
       done: false,
     }
 
@@ -80,8 +85,10 @@ export const useTodo = () => {
   }
 
   return {
-    tasks,
+    tasks: tasks,
+    getFinishedTasks,
     getTasks,
+    setTasks,
     addTask,
     updateTask,
     tickTask,

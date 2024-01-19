@@ -85,7 +85,7 @@ const FormTaskField = ({ task }: FormTaskFieldProps) => {
         defaultValue={task.description}
         ref={inputRef}
         onChange={handleChange}
-        className="text-sm border-b-[1px] w-full outline-none border-b-slate-950 active:border-none focus:outline-none"
+        className="text-sm border-b-[1px] w-[19rem] outline-none border-b-slate-950 active:border-none focus:outline-none"
       />
       <DiscardEditingTask toggleEditing={toggleEditing} />
       <DeleteTask task={task} />
