@@ -43,6 +43,8 @@ const TaskCard = ({ task }: TaskCardProps) => {
 
   const markPriority = () => {
     switch (task.priority) {
+      case undefined:
+        return <span className="absolute w-2 h-2 rounded-full bg-slate-200 right-3"></span>
       case "Highest":
         return <span className="absolute w-2 h-2 bg-red-500 rounded-full right-3"></span>
       case "Medium":
