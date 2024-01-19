@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 
 import { tree20, tree40, tree60, tree80, tree100 } from "@/assets/tree/growth"
 import TaskContext from "@/pages/todo/contexts/TaskContext"
+import { getTasksFromLocalStorage } from "../../utils"
 
 interface TreeProps {
   hideTree: boolean
@@ -9,8 +10,10 @@ interface TreeProps {
 
 const Tree = ({ hideTree }: TreeProps) => {
   const context = useContext(TaskContext)
-  const finishedTasks = context?.tasks.filter((task) => task.done)
-  const points = Math.round(((finishedTasks?.length ?? 0) / (context?.tasks.length ?? 0)) * 100)
+  const tasksFromLocalStorage: Task[] = getTasksFromLocalStorage()
+
+  const finishedTasks = tasksFromLocalStorage.filter((task) => task.done)
+  const points = Math.round(((finishedTasks?.length ?? 0) / (tasksFromLocalStorage.length ?? 0)) * 100)
 
   const [treeGrowth, setTreeGrowth] = useState(tree20)
 
@@ -25,7 +28,7 @@ const Tree = ({ hideTree }: TreeProps) => {
     growth()
   }, [context?.tasks, points])
 
-  return <>{!hideTree ? <img src={treeGrowth} alt="Tree" className="mx-auto mb-5 w-[25%] animate-fade-in" /> : null}</>
+  return <>{!hideTree ? <img src={treeGrowth} alt="Tree" className="mx-auto mb-1 w-max animate-fade-in" /> : null}</>
 }
 
 export default Tree

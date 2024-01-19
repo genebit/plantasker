@@ -85,7 +85,7 @@ export const useTodo = () => {
   }
 
   return {
-    tasks: tasks,
+    tasks,
     getFinishedTasks,
     getTasks,
     setTasks,
